@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Pindut-pindot</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="front">
+      <div class="container">
+        <div class="up">
+          <h2>Task Tracker</h2>
+
+          <div class="stats">
+            <div id="total-task">0 task</div>
+            <div id="total-complete">0 complete</div>
+          </div>
+
+          <div class="filters">
+            <button class="all-btn active" data-filter="all">All</button>
+            <button class="active-btn" data-filter="active">Active</button>
+            <button class="complete-btn" data-filter="completed">
+              Completed
+            </button>
+          </div>
+        </div>
+
+        <ul id="taskList"></ul>
+      </div>
+      <button class="btnCreate">+</button>
+    </div>
+
+    <div class="task-card">
+      <header>
+        <span class="close">
+          <!-- <ion-icon name="close"></ion-icon> -->
+          <i class="fa-solid fa-chevron-left"></i>
+        </span>
+        <!-- <span class="close">
+          <i class="fa-solid fa-chevron-left"></i>
+        </span> -->
+        <!-- <button class="back-btn">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button> -->
+        <h2>Add New Task</h2>
+        <div class="profile">
+          <i class="fa-regular fa-circle-user fa-xl"></i>
+        </div>
+      </header>
+
+      <div class="avatar-section">
+        <div class="avatar-wrapper">
+          <div class="avatar-circle">😜</div>
+          <div class="edit-icon"><i class="fa-solid fa-pen"></i></div>
+        </div>
+      </div>
+
+      <form>
+        <!-- task name -->
+        <div class="input-group">
+          <input type="text" id="taskName" placeholder=" " required />
+          <label for="taskName">Task Name</label>
+        </div>
+        <!-- Task Description -->
+        <div class="input-group">
+          <textarea id="taskDesc" placeholder=" " rows="3"></textarea>
+          <label for="taskDesc">Task Description</label>
+        </div>
+        <!-- Task Deadline -->
+        <div class="input-group">
+          <input type="datetime-local" id="deadline" placeholder=" " />
+          <label for="deadline">Task Deadline</label>
+        </div>
+        <!-- Select -->
+        <div class="input-group">
+          <select id="category">
+            <option value="" disabled selected>Select Categories</option>
+            <option value="Work">Work 👷‍♂️</option>
+            <option value="Love Life">Love Life 🥰</option>
+            <option value="Personal">Personal 😁</option>
+            <option value="Gym">Gym 💪</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <!-- color -->
+        <div class="color-section">
+          <span class="color-label">Color - Electric Violet</span>
+          <div class="color-grid">
+            <div
+              class="color"
+              data-color="#8b24ff"
+              style="background-color: #8b24ff"
+            ></div>
+            <div class="color" style="background-color: #ff4b91"></div>
+            <div class="color" style="background-color: #ffcd4b"></div>
+            <div class="color" style="background-color: #4bffd3"></div>
+            <div class="color" style="background-color: #4b91ff"></div>
+            <div class="color" style="background-color: #ffffff"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Create Task</button>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,353 @@
+ :root {
+        --bg-color: #1a1c3d;
+        --card-bg: #25284b;
+        --accent-color: #8b24ff;
+        --text-main: #ffffff;
+        --text-muted: #a0a4d8;
+        --input-border: #4e5178;
+        --selector: #333;
+      }
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background-color: var(--bg-color);
+        font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+        color: var(--text-main);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .task-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        transform: scale(0);
+        display: none;
+      }
+
+      .task-card.active-pop {
+    transform: scale(1);
+    display: block;
+}
+    .front {
+      /* display: flex;
+      flex-direction: column; */
+      width: 100%;
+      max-width: 400px;
+        padding: 20px;
+      transform: scale(1);
+      
+    }
+
+      .front.active-out {
+        transform: scale(0);
+        display: none;
+      }
+
+      .container {
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .up {
+        background-color: var(--input-border);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+        padding: 1rem;
+        border-radius: 5px;
+      }
+
+      .filters button {
+        border: none;
+        cursor: pointer;
+        padding: .5rem;
+        border-radius: 5px;
+      }
+
+      .btnCreate {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        font-size: 50px;
+        width: 50px;  
+        height: 50px;        
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: var(--accent-color);
+        color: var(--text-main);
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .back-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      header h2 {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      .avatar-section {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .avatar-wrapper {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+
+      .avatar-circle {
+        width: 100%;
+        height: 100%;
+        background: var(--accent-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 50px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .edit-icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: #333;
+        border: 2px solid var(--bg-color);
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .input-group {
+        position: relative;
+        margin-bottom: 25px;
+        
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 15px;
+        background: transparent;
+        border: 1px solid var(--input-border);
+        border-radius: 12px;
+        color: white;
+        font-size: 1rem;
+        outline: none;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+      }
+
+      input:hover,
+      textarea:hover,
+      select:hover {
+        border: 1px solid var(--text-muted);
+      }
+      
+
+      input:-webkit-autofill {
+    /* para di magbago yung background color */
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset !important;
+    
+    /* para magi ging white yung text */
+    -webkit-text-fill-color: white !important;
+}
+
+      input:placeholder-shown {
+        font-style: italic;
+      }
+
+      input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    color-scheme: dark; 
+    
+}
+
+      label {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        color: var(--text-muted);
+        pointer-events: none;
+        transition: all 0.2s ease;
+        padding: 0 5px;
+        background: var(--bg-color); /* To hide the border line behind label */
+      }
+
+      input:focus + label,
+      input:not(:placeholder-shown) + label,
+      textarea:focus + label,
+      textarea:not(:placeholder-shown) + label {
+        top: -10px;
+        left: 12px;
+        font-size: 0.8rem;
+        color: var(--accent-color);
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: var(--accent-color);
+      }
+
+
+
+      option {
+        background-color: var(--selector);
+        border-radius: 100px;      
+      }
+
+      .color-section {
+        background: var(--card-bg);
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 25px;
+      }
+
+      .color-label {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+        display: block;
+      }
+
+      .color-grid {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .color {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: transform 0.2s;
+      }
+
+      .color:hover {
+        transform: scale(1.1);
+      }
+      .color.active {
+        border-color: white;
+      }
+
+      .submit-btn {
+        width: 100%;
+        padding: 16px;
+        background: var(--accent-color);
+        border: none;
+        border-radius: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(139, 36, 255, 0.3);
+      }
+
+      .submit-btn:active {
+        transform: scale(0.98);
+      }
+
+      /* submit ul li */
+      li {
+        border-radius: 10px;
+        padding: 1rem;
+        display: flex;
+        margin: .5rem;
+      }
+
+      .task-content{
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        position: relative;
+      }
+      .task-header {
+        color: black;
+      }
+      .task-actions {
+        display: flex;
+        width: 100px;
+        gap: 1rem;
+        
+      }
+
+      .task-actions button{
+        width: 100px;
+        position: absolute;
+        border: none;
+      }
+      .complete {
+        right: 10px;
+        top: 1px;
+      }
+      .delete-btn {
+        right: 10px;
+        top: 25px;
+        background-color: red;
+        color: white;
+        font-size: 1rem;
+      }
+
+      /* para dun sa check box */
+      .task-actions input[type="checkbox"] {
+  accent-color: #8b24ff; 
+  color: #1a1c3d;
+  /* width: 20px;
+  height: 20px; */
+}
+
+
+
+ /* ==========================================
+             Responsive Queries
+=========================================== */
+
+
+/* Mobile Devices (Max 768px) */
+@media (max-width: 768px) {
+   .front {max-width: 200px;} 
+    .up { width: 200px;}
+      li {width: 200px;height: 100px;}
+      .complete {left: 50px;top: 50px;}
+      .delete-btn {left: 50px;top: 70px;}
+      .task-card {max-width: 200px;}
+}
+
