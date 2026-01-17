@@ -306,7 +306,7 @@
         display: flex;
         width: 100px;
         gap: 1rem;
-        
+        position: relative;
       }
 
       .task-actions button{
@@ -315,12 +315,16 @@
         border: none;
       }
       .complete {
-        right: 10px;
-        top: 1px;
+        /* right: 10px;
+        top: 1px; */
+        left: 300px;
+        bottom: 35px;
       }
       .delete-btn {
-        right: 10px;
-        top: 25px;
+        /* right: 10px;
+        top: 25px; */
+        left: 300px;
+        bottom: 10px;
         background-color: red;
         color: white;
         font-size: 1rem;
@@ -346,8 +350,8 @@
    .front {max-width: 200px;} 
     .up { width: 200px;}
       li {width: 200px;height: 100px;}
-      .complete {left: 50px;top: 50px;}
-      .delete-btn {left: 50px;top: 70px;}
+      .complete {bottom: -40px; left: .1px;padding: 2px;width: 105px;}
+      .delete-btn {bottom: -40px; left: 105px; }
       .task-card {max-width: 200px;}
 }
 
